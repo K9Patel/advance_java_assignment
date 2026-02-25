@@ -7,7 +7,6 @@ public class BookDAO {
     // INSERT
     public static void insertBook() throws Exception {
         Connection con = DBConnection.getConnection();
-
         String sql =
           "INSERT INTO book VALUES (?, ?, ?, ?, ?)";
         PreparedStatement ps = con.prepareStatement(sql);
@@ -27,7 +26,7 @@ public class BookDAO {
     // UPDATE
     public static void updateBook() throws Exception {
         Connection con = DBConnection.getConnection();
-
+        
         PreparedStatement ps =
           con.prepareStatement(
             "UPDATE book SET price=? WHERE book_id=?");
